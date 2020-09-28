@@ -1,4 +1,3 @@
-
 import axios from 'axios'
 
 export function request(config) {
@@ -10,6 +9,7 @@ export function request(config) {
   })
 
   //拦截数据
+
   //请求拦截
   instance.interceptors.request.use(config => {
     return config

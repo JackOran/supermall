@@ -1,10 +1,10 @@
 <template>
   <div class="goods-item">
-    <img :src="goodsitem.show.img" alt="">
+    <img :src="goodsitem.show.img" alt="" @load="imageLoad" @click="itemClick">
     <div class="goods-info">
-      <p>{{goodsitem.title}}</p>
-      <span class="price">{{goodsitem.price}}</span>
-      <span class="collect">{{goodsitem.cfav}}</span>
+      <p>{{ goodsitem.title }}</p>
+      <span class="price">{{ goodsitem.price }}</span>
+      <span class="collect">{{ goodsitem.cfav }}</span>
     </div>
   </div>
 </template>
@@ -18,6 +18,16 @@ export default {
       default() {
         return {}
       }
+    }
+  },
+  methods: {
+    imageLoad() {
+      // console.log('load');
+      this.$bus.$emit('itemImageLoad')
+    },
+    itemClick() {
+      // console.log('跳转到详情页');
+      this.$router.push('/detail/' + this.goodsitem.iid)
     }
   },
 }
