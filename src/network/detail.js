@@ -9,14 +9,19 @@ export function getDetailData(iid) {
   })
 }
 
+//请求详情页推荐数据
+export function getRecommendData() {
+  return request({
+    url: '/recommend'
+  })
+}
+
 //详情页商品信息
 export class Goods {
   constructor(itemInfo, columns, services) {
     this.title = itemInfo.title;
-    this.newPrice = itemInfo.price;
-    this.oldPrice = itemInfo.oldPrice;
-    this.discount = itemInfo.discountDesc;
-    // this.discountBgColor = itemInfo.discountBgColor
+    this.lowNowPrice = itemInfo.lowNowPrice;
+    this.discountDesc = itemInfo.discountDesc;
     this.desc = itemInfo.desc;
 
     this.columns = columns;

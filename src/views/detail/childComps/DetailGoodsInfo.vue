@@ -7,7 +7,11 @@
     </div>
     <div class="info-key">{{goodsInfo.detailImage[0].key}}</div>
     <div class="info-list">
-      <img v-for="(item, index) in goodsInfo.detailImage[0].list" :src="item" :key="index" alt="" @load="imageLoad">
+      <img v-for="(item, index) in goodsInfo.detailImage[0].list"
+           :src="item"
+           :key="index"
+           alt=""
+           @load="imageLoad">
     </div>
   </div>
 </template>

@@ -40,7 +40,8 @@ import Scroll from "../../components/common/scroll/Scroll";
 import BackTop from "../../components/content/backTop/BackTop";
 
 import {getHomeMultidata, getHomeData} from "network/home";
-import {debounce} from "common/utils";
+import {itemListenerMixin} from "../../common/mixin";
+// import {debounce} from "common/utils";
 
 export default {
   name: "Home",
@@ -61,6 +62,7 @@ export default {
       saveY: 0,
     }
   },
+  mixins: [itemListenerMixin],
   components: {
     HomeSwiper,
     RecommendView,
@@ -84,16 +86,18 @@ export default {
 
   },
   mounted() {
-    //监听item中图片加载完成
-    //加入防抖函数的写法
-    const refresh = debounce(this.$refs.scroll.refresh)
-
-    this.$bus.$on('itemImageLoad', () => {
-      // console.log('------------');
-      refresh()
-      //无防抖函数的写法
-      // this.$refs.scroll.refresh()
-    })
+    // //监听item中图片加载完成
+    // //加入防抖函数的写法
+    // const refresh = debounce(this.$refs.scroll.refresh, 2000)
+    //
+    // //对监听事件进行保存
+    // this.itemImageListener = () => {
+    //   refresh()
+    //   //无防抖函数的写法
+    //   // this.$refs.scroll.refresh()
+    // }
+    // this.$bus.$on('itemImageLoad', this.itemImageListener)
+    console.log('我是home中的mounted');
   },
   computed: {
     showdata() {
@@ -107,7 +111,11 @@ export default {
   },
   deactivated() {
     // console.log('-----');
+    //离开保存Y值
     this.saveY = this.$refs.scroll.getScrollY()
+
+    //取消全局事件的监听
+    this.$bus.$off('itemImageLoad', this.itemImageListener)
   },
   methods: {
 
@@ -176,6 +184,7 @@ export default {
         this.goods[type].goodslist.push(...res.data.data.list)
         this.goods[type].page += 1
 
+        //完成上拉加载更多
         this.$refs.scroll.finishPullUp(2000)
       })
     },
