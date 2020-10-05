@@ -31,9 +31,9 @@ import DetailParamInfo from "./childComps/DetailParamInfo";
 import DetailCommonInfo from "./childComps/DetailCommonInfo";
 import DetailBottomBar from "./childComps/DetailBottomBar";
 
-import {getDetailData, getRecommendData, Goods, Shop, GoodsParam} from "../../network/detail";
-import {backTop, itemListenerMixin} from "../../common/mixin";
-import {debounce} from "../../common/utils";
+import {getDetailData, getRecommendData, Goods, Shop, GoodsParam} from "network/detail";
+import {backTop, itemListenerMixin} from "common/mixin";
+import {debounce} from "common/utils";
 import {mapActions} from 'vuex'
 import { Toast } from 'vant';
 

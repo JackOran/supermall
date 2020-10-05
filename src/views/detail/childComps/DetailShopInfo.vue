@@ -31,6 +31,7 @@
           </table>
         </div>
       </div>
+
       <div class="shop-bottom">
         <div class="enter-shop">进店逛逛</div>
       </div>

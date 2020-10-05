@@ -1,5 +1,6 @@
 import {request} from "./request";
 
+//获取详情页数据
 export function getDetailData(iid) {
   return request({
     url: '/detail',
@@ -21,7 +22,9 @@ export class Goods {
   constructor(itemInfo, columns, services) {
     this.title = itemInfo.title;
     this.lowNowPrice = itemInfo.lowNowPrice;
+    this.price = itemInfo.price
     this.discountDesc = itemInfo.discountDesc;
+    this.oldPrice = itemInfo.oldPrice
     this.desc = itemInfo.desc;
 
     this.columns = columns;

@@ -2,9 +2,9 @@
   <div v-if="Object.keys(goods).length !== 0" class="base-info">
     <div class="info-title">{{goods.title}}</div>
     <div class="info-price">
-      <span class="n-price">{{goods.newPrice}}</span>
+      <span class="n-price">{{goods.price}}</span>
       <span class="o-price">{{goods.oldPrice}}</span>
-      <span class="discount">{{goods.discount}}</span>
+      <span class="discountDesc">{{goods.discountDesc}}</span>
     </div>
     <div class="info-other">
       <span>{{goods.columns[0]}}</span>
@@ -17,6 +17,7 @@
         <span>{{goods.services[index].name}}</span>
       </span>
     </div>
+
   </div>
 </template>
 
@@ -59,7 +60,7 @@ export default {
   font-size: 13px;
   text-decoration: line-through;
 }
-.info-price .discount {
+.info-price .discountDesc {
   border-radius: 10px;
   background-color: var(--color-high-text);
   color: #fff;

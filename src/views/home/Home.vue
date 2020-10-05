@@ -117,6 +117,7 @@ export default {
     //取消全局事件的监听
     this.$bus.$off('itemImageLoad', this.itemImageListener)
   },
+
   methods: {
 
 

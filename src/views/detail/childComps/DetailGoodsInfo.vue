@@ -5,7 +5,9 @@
       <div class="desc">{{goodsInfo.desc}}</div>
       <div class="end"></div>
     </div>
+
     <div class="info-key">{{goodsInfo.detailImage[0].key}}</div>
+
     <div class="info-list">
       <img v-for="(item, index) in goodsInfo.detailImage[0].list"
            :src="item"
