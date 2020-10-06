@@ -3,7 +3,7 @@
     <div class="check-content">
       <CheckButton class="select-all"
                    :is-checked="isSelectAll" @click.native="checkClick"></CheckButton>
-      <span >全选</span>
+      <span>全选</span>
     </div>
     <span class="total-price">合计: ¥{{ totalPrice }}</span>
     <span class="buy-product" @click="calcClick">去计算({{ $store.getters.cartCount }})</span>
@@ -58,10 +58,10 @@ export default {
 
 <style scoped>
 .cart-bottom-bar {
-  height: 40px;
+  height: 44px;
   background-color: #eee;
   position: relative;
-  line-height: 40px;
+  line-height: 44px;
   display: flex;
 }
 

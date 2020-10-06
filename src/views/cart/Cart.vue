@@ -2,11 +2,9 @@
   <div id="cart">
 <!--    顶部导航-->
     <NavBar class="cart-bar">
-      <div slot="left" class="back" @click="backClick">
-        <img src="~assets/img/common/back.svg" alt="">
-      </div>
       <div slot="center">购物车({{cartLength}})</div>
     </NavBar>
+
 <!--    商品列表-->
     <Scroll class="content" ref="scroll">
       <CartList></CartList>
@@ -69,7 +67,7 @@ export default {
   /*right: 0;*/
   /*top: 44px;*/
   /*bottom: 49px;*/
-  height: calc(100% - 44px - 49px - 40px);
+  height: calc(100% - 44px - 49px - 44px);
 }
 
 .back img {

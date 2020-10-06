@@ -57,6 +57,12 @@ export default {
   padding: 5px;
   border-bottom: 1px solid #ccc;
 }
+.item-selector {
+  width: 14%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .item-title, .item-desc {
   overflow: hidden;

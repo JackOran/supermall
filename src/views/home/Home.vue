@@ -40,7 +40,7 @@ import Scroll from "../../components/common/scroll/Scroll";
 import BackTop from "../../components/content/backTop/BackTop";
 
 import {getHomeMultidata, getHomeData} from "network/home";
-import {itemListenerMixin} from "../../common/mixin";
+import {itemListenerMixin} from "common/mixin";
 // import {debounce} from "common/utils";
 
 export default {
